@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover student clubs at Coventry University Kazakhstan.">
+    <title>Coventry University Kazakhstan | Student Clubs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header" id="home">
+    <div class="topbar">
+      <a class="brand" href="#home" aria-label="Coventry University Kazakhstan home">
+        <img class="brand-mark" src="coventry-logo.png" alt="">
+        <span>
+          Coventry University<br>
+          <strong>Kazakhstan</strong>
+        </span>
+      </a>
+      <label class="header-search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <span class="sr-only">Search clubs</span>
+        <input id="clubSearch" type="search" placeholder="Search for a club" autocomplete="off">
+        <button id="clearSearch" class="clear-search" type="button" aria-label="Clear search" hidden>&times;</button>
+      </label>
+      <button class="account-button" type="button" data-placeholder="Account access is coming soon.">Sign in</button>
+    </div>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a class="nav-link active" href="#clubs">Clubs info</a>
+      <a class="nav-link" href="#categories">Categories</a>
+      <a class="nav-link" href="#events">Upcoming events</a>
+      <a class="nav-link" href="#announcements">Announcements</a>
+      <button class="nav-link nav-button" type="button" data-placeholder="Club creation will be available soon.">Create club</button>
+      <a class="nav-link support" href="#support">Support</a>
+    </nav>
+  </header>
+    <main>
+    <section class="directory section" id="clubs" aria-labelledby="directoryTitle">
+      <div class="directory-heading">
+        <div>
+          <p class="eyebrow">Student life at Coventry</p>
+          <h1 id="directoryTitle">Explore Coventry university <span>clubs!</span></h1>
+        </div>
+        <p class="club-count" id="clubCount" aria-live="polite"></p>
+      </div>
+      <div class="category-tabs" id="categories" aria-label="Club categories" role="tablist">
+        <button class="category-tab active" type="button" role="tab" aria-selected="true" data-category="All Clubs">All Clubs</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Arts & Performance">Arts &amp; Performance</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Sports & Recreation">Sports &amp; Recreation</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Volunteering & Social Impact">Volunteering &amp; Social Impact</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Academic & Science">Academic &amp; Science</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Business & Entrepreneurship">Business &amp; Entrepreneurship</button>
+        <button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Languages & Culture">Languages &amp; Culture</button>
+      </div>
+      <div class="club-grid" id="clubGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>No clubs found. Try a different search or category.</p>
+    </section>
+    <section class="info-strip section" id="events" aria-labelledby="eventsTitle">
+      <div>
+        <p class="eyebrow">Coming up</p>
+        <h2 id="eventsTitle">Upcoming events</h2>
+        <p>Club events and activities will be posted here soon.</p>
+      </div>
+      <button class="outline-button" type="button" data-placeholder="The events calendar is coming soon.">View calendar</button>
+    </section>
+    <section class="info-strip section announcement" id="announcements" aria-labelledby="announcementTitle">
+      <div>
+        <p class="eyebrow">Noticeboard</p>
+        <h2 id="announcementTitle">Announcements</h2>
+        <p>Find a club, meet new people, and make your Coventry experience your own.</p>
+      </div>
+    </section>
+    </main>
+    <footer id="support">
+      <span>Coventry University Kazakhstan</span>
+      <a href="mailto:clubs@coventry.edu.kz">clubs@coventry.edu.kz</a>
+      <span>Need help? We are here for you.</span>
+    </footer>
+    <div class="modal" id="clubModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-panel">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close club details">&times;</button>
+        <img id="modalImage" src="" alt="">
+        <div class="modal-content">
+          <p class="category-label" id="modalCategory"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+          <h3>What we do</h3>
+          <ul id="modalActivities"></ul>
+          <button class="join-button" id="joinButton" type="button">Join Club</button>
+          <p class="placeholder-message" id="joinMessage" role="status"></p>
+        </div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
